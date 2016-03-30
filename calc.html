@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style type="text/css">
+.inputclass{
+    display: inline;
+    width: 10%;
+}
+</style>
+</head>
+<body>
+<h2>使用JQuery的計算機</h2>
+<hr />
+
+<div class="form-group">
+
+	<input type="int" class="form-control inputclass" id="num1" placeholder="請輸入數字">
+	+
+	<input type="int" class="form-control inputclass" id="num2" placeholder="請輸入數字">
+	=
+	<input type="int" class="form-control inputclass" id="ans1" placeholder="答案在這裡顯示">
+	<a href="#" id="cal" class="btn btn-default"onclick="cal1()">計算</a>
+
+</div>
+<hr />
+
+	<input type="int" id="num3"/>
+	+
+	<input type="int" id="num4"/>
+	=
+	<input type="int" id="ans2"/>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+//要點擊才會動的計算機
+function cal1(){
+	var num1 = parseInt($("#num1").val());
+	var num2 = parseInt($("#num2").val());
+	var ans =num1+num2;
+	$("#ans1").val(ans);
+}
+
+//輸入就自動計算的計算機
+function cal2(){
+	var num3 = parseInt($("#num3").val());
+	var num4 = parseInt($("#num4").val());
+	var ans = num3+num4;
+	$("#ans2").val(ans);
+}
+$( document ).ready(function() {
+	$("#num3").keyup(function( event ) {
+		cal2();
+	});
+	$("#num4").keyup(function( event ) {
+		cal2();
+	});
+});
+
+
+
+</script>
+
+</body>
+</html>
