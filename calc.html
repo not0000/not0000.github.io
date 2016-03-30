@@ -12,7 +12,10 @@
 </style>
 </head>
 <body>
-<h2>使用JQuery的計算機 </h2>
+
+<div class="container">
+
+<h2>使用JQuery的計算機</h2>
 <hr />
 
 <div class="form-group">
@@ -21,7 +24,7 @@
 	+
 	<input type="number" class="form-control inputclass" id="num2" placeholder="請輸入數字">
 	=
-	<input type="text" class="form-control inputclass" id="ans1" placeholder="答案在這裡顯示">
+	<input type="number" class="form-control inputclass" id="ans1" placeholder="答案在這裡顯示" readonly>
 	<a href="#" id="cal" class="btn btn-default" onclick="cal1()">計算</a>
 
 </div>
@@ -31,10 +34,14 @@
 	+
 	<input type="number" id="num4"/>
 	=
-	<input type="text" id="ans2"/>
+	<input type="number" id="ans2" readonly />
 
 <hr />
 <a href="calc.zip" class="btn btn-primary">範例下載</a>
+
+</div>
+
+
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
