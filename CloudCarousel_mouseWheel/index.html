@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh-tw">
+<head>
+<meta name="Generator" content="EditPlus" />
+<meta name="Author" content="男丁格爾's 脫殼玩" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/cloud-carousel.1.0.3.js"></script>
+<title>CloudCarousel 1.0.3</title>
+<style type="text/css">
+	body{
+	margin:0;
+	padding:0;
+	}
+	#carousel1 {
+		height: 384px;
+		background: url(images/bg.jpg);
+		overflow: scroll;
+	}
+	.cloudcarousel img {
+		width: 128px;
+		height: 164px;
+	}
+	.carouselLeft {	
+		display: none;
+		position: absolute;
+		top: 20px;
+		right: 64px;
+		background: url(images/rotate-left.png);	
+		width: 40px;
+		height: 40px;
+		background-position: 0px 0px;
+	}
+	.carouselLeft:hover {		
+		width: 40px; 
+		height: 40px;
+		background-position: 0px 40px;
+		cursor: auto;
+	}
+	.carouselRight {
+		display: none;
+		position: absolute;
+		top: 20px;
+		right:20px;
+		background: url(images/rotate-right.png);	
+		width: 40px;
+		height: 40px;
+		background-position: 0px 0px;
+	}
+	.carouselRight:hover {	
+		width: 40px;
+		height: 40px;
+		background-position: 0px 40px;
+	}
+	#da-vinci-title {
+		display: none;	
+		color: #f90;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: 17px;
+		font-weight: bold;
+		margin: 20px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 10px;
+		width: 80%;
+	}
+	#da-vinci-alt{
+		display: none;
+		color: #ddd;
+		margin: 20px;
+		margin-top: 0px;
+		font-size: 14px;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+
+		var clientwidth = document.documentElement.clientWidth;
+		$("#carousel1").css("width",clientwidth);
+
+		// 把 #carousel1 轉換成 CloudCarousel 效果
+		// 設定其 title, alt 及控制左右旋轉的元素
+		// 並讓其自動往左旋及支援滑鼠滾輪
+		$("#carousel1").CloudCarousel({
+			reflHeight: 56,
+			reflGap: 2,
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
+			buttonLeft: $('#but1'),
+			buttonRight: $('#but2'),
+			yRadius: 40,
+			xPos: clientwidth/2,
+			yPos: 120,
+			speed: 0.15,
+			autoRotate: 'left',
+			mouseWheel: true
+		});
+	});
+</script>
+</head>
+
+<body>
+<p>
+<span class="bold">CloudCarousel</span> 是能讓我們把圖片弄成 <span class="bold">3D 立體</span>的環狀瀏覽的套件。除了可以透過左右鈕來旋轉切換之外，若在引用 [link href="http://plugins.jquery.com/project/mousewheel" title="Mouse Wheel Extension" css="boldBlue"] 後則能支援<span class="bold">滑鼠滾輪</span>來控制呢。<!--more-->
+<br /><br />
+套件名稱：<span class="boldBlue">ACloudCarousel</span><br />
+套件版本：<span class="boldBlue">1.0.3</span><br />
+作者網站：<a href="http://www.professorcloud.com/mainsite/carousel.htm" class="boldBlue" target="_blank">http://www.professorcloud.com/mainsite/carousel.htm</a><br />
+套件網址：<span class="boldBlue">N/A</span><br />
+發佈日期：<span class="boldBlue">2010-05-13</span><br />
+檔案大小：<span class="boldBlue">11.6 KB</span><br />
+檔案下載：<a href="http://demonstration.abgne.tw/jquery/plugins/0081/js/cloud-carousel.1.0.3.js" title="cloud-carousel.1.0.3.js"  class="boldBlue" target="_blank">cloud-carousel.1.0.3.js</a><br />
+引用檔案：<a href="http://demonstration.abgne.tw/jquery/jquery.mousewheel.js" title="jquery.mousewheel.js"  class="boldBlue" target="_blank">jquery.mousewheel.js</a>
+</p>
+	<div id="carousel1">
+		<img class="cloudcarousel" src="images/test9.png" alt="Self-portrait in red chalk, circa 1512-1515." title="Leonardo Da Vinci" />
+		<img class="cloudcarousel" src="images/test1.png" alt="Oil on cotton wood, circa 1503–1505." title="Mona Lisa" />
+		<img class="cloudcarousel" src="images/test2.png" alt="Oil on wood panel, 1485." title="Lady with an Ermine" />
+		<img class="cloudcarousel" src="images/test3.png" alt="Oil on canvas, circa 1501." title="Madonna of the Yarnwinder" />
+        <img class="cloudcarousel" src="images/test4.png" alt="Oil on canvas (transferred from panel), circa 1490." title="Madonna and the Child" />
+		<img class="cloudcarousel" src="images/test5.png" alt="Oil on walnut panel transferred to canvas, circa 1510–1515." title="Bacchus" />
+		<img class="cloudcarousel" src="images/test6.png" alt="Oil on panel, circa 1478–1480." title="Madonna of the Carnation" />
+		<img class="cloudcarousel" src="images/test7.png" alt="Charcoal, black and white chalk on tinted paper, circa 1499–1500." title="The Virgin and Child with St. Anne and St. John the Baptist" />
+		<img class="cloudcarousel" src="images/test8.png" alt="Oil on panel, circa 1510." title="The Virgin and Child with St. Anne" />
+
+		<div id="but1" class="carouselLeft"></div>
+ 		<div id="but2" class="carouselRight"></div>
+
+		<p id="da-vinci-title"></p>
+		<p id="da-vinci-alt"></p>
+	</div>
+</body>
+</html>
