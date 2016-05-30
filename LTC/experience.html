@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://lab.25sprout.com/responsive_table/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="均利科技股份有限公司">
+<meta name="copyright" content="25sprout 2013 all rights Reserved.">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<!-- jQuery -->
+<script src="js/ga.js" type="text/javascript" ></script>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<!-- jQuery UI -->
+<link href="css/jquery-ui-1.10.0.custom.css" type="text/css" rel="stylesheet" >
+<script src="js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
+<script src="js/bootstrap.min.js"  type="text/javascript"></script>
+<!-- prettify -->
+<link href="css/prettify.css" type="text/css" rel="stylesheet" >
+<script src="js/prettify.js"  type="text/javascript"></script>
+<!-- Font -->
+<link href="css/font-face.css" type="text/css" rel="stylesheet" >
+<!-- Font Awsome -->
+<link href="css/font-awesome.css" type="text/css" rel="stylesheet" >
+<!-- HTML meta 設定（必填） -->
+<meta name="description" content="Responsive Table Layout.">
+<meta name="keywords" content="Responsive,Table,CSS,Display.">
+<meta name="URL" content="">
+<meta name="image" content="http://lab.25sprout.com/responsive_table/images/share.jpg">
+<!--Facebook -->
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="http://lab.25sprout.com/responsive_table/">
+<meta property="og:type" content="Website">
+<meta property="og:description" content="Responsive Table Layout.">
+<meta property="og:image" content="http://lab.25sprout.com/responsive_table/images/share.jpg">
+<!-- 網站標題 -->
+<title>資訊系統</title>
+<!-- Lab 共用的 CSS -->
+<link href="css/lab_site.css" type="text/css" rel="stylesheet" >
+<!-- 自己這個 site 要用的 CSS-->
+<link href="css/style.css" type="text/css" rel="stylesheet" >
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+	</script>
+	
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn’t work if you view the page via file:// -->
+    
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="zoom: 1;">
+<!-- 上方的 header 全站統一 START -->
+    <div id="wrapper"  class="rwd_bg ">
+
+	
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a>
+                      資訊系統
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">首頁(系統公告&登入)</a>
+                </li>
+                <li>
+                    <a href="experience.html">個人資料</a>
+                </li>				
+				<!--
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle " data-toggle="dropdown">個人學經歷<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <li><a href="experience.html">基本資料</a></li>
+                    <li><a href="experience.html">教育資料</a></li>
+                    <li><a href="experience.html">證照資料</a></li>
+                    <li><a href="experience.html">成績查詢</a></li>
+                  </ul>
+                </li>
+				-->
+
+               <li>
+                    <a href="mainmenu.html">主選單</a>
+                </li>
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle " data-toggle="dropdown">多層選單<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <li><a href="#">子選單1</a></li>
+                    <li><a href="#">子選單2</a></li>
+                    <li><a href="#">子選單3</a></li>
+                  </ul>
+                </li>
+			</ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+         <!-- Page Content -->
+<div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+           
+<div class="content-container">
+<!--  開始 -->
+<div class="container">
+ <a href="index.html"><img src="images/logo.png" class="logo" alt="/"></a>
+<div class="tital" >個人學經歷</div><!-- /#tital -->  
+	<div class="row">
+            <div id="tab" class="" data-toggle="buttons-radio">
+              <a href="#01" class="btn btn-large btn-info textshadow" data-toggle="tab">基本資料</a>
+              <a href="#02" class="btn btn-large btn-info textshadow" data-toggle="tab">教育資料</a>
+              <a href="#03" class="btn btn-large btn-info textshadow" data-toggle="tab">證照資料</a>
+              <a href="#04" class="btn btn-large btn-info textshadow"  data-toggle="tab">成績查詢</a>
+            </div>
+               <hr/>
+            <div class="tab-content">
+              <div class="tab-pane active" id="01">
+                <p class="lead">基本資料</p>
+                <div class="row">
+                    <div class="col-md-2">                     
+                         <img class="img-circle img-responsive line" alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/AWS_Simple_Icons_Non-Service_Specific_User.svg/2000px-AWS_Simple_Icons_Non-Service_Specific_User.svg.png">
+                    </div>
+                    <div class="col-md-9">
+						
+	
+	
+        <div class="col-md-12">
+            <h1 class="text-center">
+                姓名
+            </h1>
+           
+        </div>
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>軍種</th>
+        				<th>位階</th>
+        				<th class="numeric">兵籍號碼</th>
+        				<th class="numeric">出生日期</th>
+        				<th class="numeric">所屬單位</th>
+        			</tr>
+        		</thead>
+        		<tbody class="B-word" >
+        			<tr>
+        				<td data-title="軍種">空軍</td>
+        				<td data-title="位階">上士(飛機機械士)</td>
+        				<td data-title="兵籍號碼" class="numeric">12345678</td>
+        				<td data-title="出生日期" class="numeric">2000/00/00</td>
+        				<td data-title="所屬單位" class="numeric">XX部XX組</td>
+        			</tr>
+          		</tbody>
+        	</table>
+			<br>
+		            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>官科</th>
+        				<th>年班</th>
+        				<th class="numeric">軍事學資</th>
+        				<th class="numeric">民間學資</th>
+        				<th class="numeric">編製專長</th>
+        				<th class="numeric">官科專長</th>
+
+        			</tr>
+        		</thead>
+        		<tbody class="B-word" >
+        			<tr>
+        				<td data-title="官科">&nbsp&nbsp</td>
+        				<td data-title="年班">&nbsp&nbsp</td>
+        				<td data-title="軍事學資" class="numeric">高級班</td>
+        				<td data-title="民間學資" class="numeric">國內學士</td>
+        				<td data-title="編製專長" class="numeric">[4G016]飛機修護士</td>
+        				<td data-title="官科專長" class="numeric">&nbsp&nbsp</td>
+					
+        			</tr>
+          		</tbody>
+        	</table>
+
+
+<br>
+		            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+
+        				<th class="numeric">分業第一專長</th>
+        				<th class="numeric">分業第二專長</th>
+        				<th class="numeric">分業第三專長</th>
+        			</tr>
+        		</thead>
+        		<tbody class="B-word" >
+        			<tr>
+
+        				<td data-title="分業第一專長" class="numeric">[3A121]步槍兵</td>
+        				<td data-title="分業第二專長" class="numeric">[3A121]人事行政管理兵</td>						
+         				<td data-title="分業第二專長" class="numeric">[4G016]飛機修護士</td>						
+        			</tr>
+          		</tbody>
+        	</table>
+
+
+
+			
+			
+        </div>
+
+					</div>
+                </div>
+              </div><!-- /#01 -->  
+			  
+              <div class="tab-pane" id="02">
+                    <br>
+                <p class="lead">教育資料</p>
+               
+                   
+                      <p>For a full list of our services including support and consultancy for start-up businesses please see the Our Services section of the website. Alternatively if you have a specific service or question in mind please don’t hesitate to contact us to discuss this using the contact details on the Contact Us page of the site.</p> 
+                  
+                   
+                      <img src="http://huadata.pos.net.tw/billyhome/product/1212.jpg" class="line img-responsive">  
+                    
+              
+              </div><!-- /#02 -->  
+			  
+              <div class="tab-pane" id="03">
+               <br>
+                <p class="lead">證照資料</p>
+           
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+              <a href="#11" class="btn active" data-toggle="tab">人事基本檔</a>
+              <a href="#22" class="btn" data-toggle="tab">LTC證照</a>
+              <a href="#33" class="btn" data-toggle="tab">合格證</a>
+              <a href="#44" class="btn"  data-toggle="tab">操作證</a>
+            </div>
+             
+            <div class="tab-content">
+			  <!-- 人事基本檔 -->
+              <div class="tab-pane active" id="11">
+               <br>
+                <p class="lead">人事基本檔</p>
+             
+                   
+                      <p>For a full list of our services including support and consultancy for start-up businesses please see the Our Services section of the website. Alternatively if you have a specific service or question in mind please don’t hesitate to contact us to discuss this using the contact details on the Contact Us page of the site.</p> 
+                  
+                   
+                      <img src="http://eportfolio.just.edu.tw/image/image_gallery?img_id=1332125&t=1272968133105" class="line img-responsive">  
+             
+			  </div>
+			  <!-- 人事基本檔 -->
+              <!-- LTC證照 -->  			  
+              <div class="tab-pane" id="22">
+               <br>
+                <p class="lead">LTC證照</p>
+                
+                    
+                      <p>For a full list of our services including support and consultancy for start-up businesses please see the Our Services section of the website. Alternatively if you have a specific service or question in mind please don’t hesitate to contact us to discuss this using the contact details on the Contact Us page of the site.</p> 
+                   
+                      <img src="http://pic.pimg.tw/daphneli/892411fc6f8a9833cbbd09c6580dc6d0.jpg" class="line img-responsive">  
+                 
+                
+			  </div>
+			  <!-- LTC證照 -->
+			  <!-- 合格證 -->  
+              <div class="tab-pane" id="33">
+               <br>
+                <p class="lead">合格證</p>
+                <div class="row">
+                    
+                      <p>For a full list of our services including support and consultancy for start-up businesses please see the Our Services section of the website. Alternatively if you have a specific service or question in mind please don’t hesitate to contact us to discuss this using the contact details on the Contact Us page of the site.</p> 
+                   
+                      <img src="https://sites.google.com/site/pinoruru/images/MCTS_01.jpg" class="line img-responsive">  
+                   
+                </div>
+			  </div>
+			 
+			  <!-- 合格證 -->  
+			  <!-- 操作證 -->  
+              <div class="tab-pane" id="44">
+			                 <br>
+                <p class="lead">操作證</p>
+              
+                
+                      <p>For a full list of our services including support and consultancy for start-up businesses please see the Our Services section of the website. Alternatively if you have a specific service or question in mind please don’t hesitate to contact us to discuss this using the contact details on the Contact Us page of the site.</p> 
+                  
+                      <img src="http://web.ydu.edu.tw/~pei/image/LCCIEB-CS&MT.jpg" class="line img-responsive">  
+                   
+               
+			  </div>
+			  <!-- 操作證 -->  
+           </div><!-- tab-content --> 
+
+		   
+			
+			   </div><!-- /#03 --> 
+			   
+			   
+			   
+              <div class="tab-pane" id="04">
+                    <br>
+                <p class="lead">成績查詢</p>
+ 
+ 
+ 
+ <form class="form-horizontal">
+<fieldset>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="location">受訓班隊</label>  
+  <div class="col-md-4">
+  <input id="location" name="location" type="text" placeholder="受訓班隊" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radius">受訓年度</label>
+  <div class="col-md-4">
+    <select id="radius" name="radius" class="form-control">
+      <option value="1">受訓年度 one</option>
+      <option value="2">受訓年度 two</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="property_type">測考編號</label>
+  <div class="col-md-4">
+    <select id="property_type" name="property_type" class="form-control">
+      <option value="1">測考編號 one</option>
+      <option value="2">測考編號 two</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="price_min">測考名稱</label>
+  <div class="col-md-2">
+    <select id="price_min" name="price_min" class="form-control">
+      <option value="1">測考名稱 one</option>
+      <option value="2">測考名稱 two</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic"></label>
+  <div class="col-md-2">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">測考名稱 one</option>
+      <option value="2">測考名稱 two</option>
+    </select>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">搜尋</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+ 
+ 
+ 
+ 
+ 
+ 
+              </div><!-- /#04 -->  
+		  </div>   
+	</div>	 
+</div>
+<!-- 內容 結束 -->
+ <p class="bg-success">連絡電話：02-00000000  系統維護單位：XXXXXXXX</p>
+     
+      
+    
+
+</div><!--content-container -->
+</div><!-- /#page-content-wrapper -->
+</div><!-- /#wrapper -->
+</body>
+</html>
