@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<style type="text/css">
+.iframepagecss{
+position:absolute;
+left:0;
+top:0;
+}
+</style>
+</head>
+<body>
+<a href="#good" onclick="alert('good')">good</a>
+
+<br>
+<pre style="font-size:24px">
+這個網頁有一個good的連結，點下去會執行javascript，clickjacking攻擊可以把惡意連結蓋在good上
+這邊使用的方法是iframe，利用css透明absoulute重新指定位置後，就可以把good蓋住，讓使用者誤點
+<a href="#" onclick="clickjacking()">ready_clickjacking</a>
+</pre>
+<iframe id="iframepage" src="jacking.html" height="100px" frameborder="0"></iframe>
+<script type="text/javascript"> 
+function clickjacking(){
+$("#iframepage").toggleClass("iframepagecss");
+}
+</script>
+</body>
+</html>
