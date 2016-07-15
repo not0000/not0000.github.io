@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript"> 
+	$(document).ready(function(){
+	
+		wdth=$(window).width();
+		$("#img1").css("width",wdth);
+		
+		setTimeout(answercall,7000);// 注意函数名没有引号和括弧
+	});
+
+	function answercall(){
+		$("#img1").css("display","inline");
+		startPeristentVibrate(1000, 1500);
+	}
+	function trap(){
+		alert("你點到惡意連結了");
+		stopVibrate();
+	}
+	
+	function startVibrate(level) {
+		navigator.vibrate(level);
+	}
+
+	var vibrateInterval;
+	function startPeristentVibrate(level, interval) {
+		vibrateInterval = setInterval(function() {
+			startVibrate(level);
+		}, interval);
+	}
+	
+	function stopVibrate() {
+		if(vibrateInterval) clearInterval(vibrateInterval);
+		navigator.vibrate(0);
+	}
+
+	</script>
+	<style type="text/css"> 
+	body{
+		font-size:2em;
+	}
+	#img1{
+		position:fixed;
+		top:0;
+		left:0;
+		display:none;
+	}
+	#button1{
+		width:100%;
+		height:600px;
+		display:inline-block;
+		position:fixed;
+		right:0px;
+		bottom:0px;
+		background-color:white;
+		opacity:0;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>資通安全</h1>
+		<p>專攻手機的釣魚網站示範</p>
+		<p>這是一個示範網頁，將展示利用假冒來電狀態騙使用者點擊惡意連結</p>
+	</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<img id="img1" src="phone.png" alt="" />
+	<div onclick="trap()" id="button1"></div>
+	<a href="#" onclick="answercall()" onkeypress="answercall()">忽然跳出接電話畫面</a>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0"><a href="js_VibrationAPI.html">js震動api範例</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+	<div style="margin:60px 0 60px 0">一般文章內容</div>
+
+</body>
+</html>

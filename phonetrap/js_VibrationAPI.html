@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.webhek.com/demos/javascript-vibrate-api.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width">
+	<title>演示：Javascript振动API(Vibration API)</title>
+	<script type="text/javascript">
+		/*
+		alert("navigator.vibrate?  " + (navigator.vibrate ? "Yes" : "No"));
+		alert("navigator.webkitVibrate?  " + (navigator.webkitVibrate ? "Yes" : "No"));
+		alert("navigator.oVibrate?  " + (navigator.oVibrate ? "Yes" : "No"));
+		*/
+		function startVibrate(level) {
+			navigator.vibrate(level);
+		}
+
+		var vibrateInterval;
+		function startPeristentVibrate(level, interval) {
+			vibrateInterval = setInterval(function() {
+				startVibrate(level);
+			}, interval);
+		}
+		
+		function stopVibrate() {
+			if(vibrateInterval) clearInterval(vibrateInterval);
+			navigator.vibrate(0);
+		}
+	</script>
+</head>
+<body>
+
+
+	<h1>演示：Javascript振动API(Vibration API)
+	</h1>
+
+<br><br><br>
+
+	<p>请使用谷歌浏览器，火狐浏览器等现代浏览器，点击下面的按钮，你的手机就会出现振动效果！</p>
+
+	<button class="sexyButton" onclick="startVibrate(1000);">振动一次</button>
+
+	<button class="sexyButton" onclick="startVibrate([1000, 200, 1000, 2000, 400]);">振动多次</button>
+
+	<button class="sexyButton" onclick="startPeristentVibrate(1000, 1500);">持续振动</button>
+	
+	<button class="sexyButton" onclick="stopVibrate();">停止振动!</button>
+	
+	<br><br><br>
+
+<p class="demo-conversion">请阅读教程<a href="http://www.webhek.com/javascript-vibrate-api" target="_top">Javascript振动API(Vibration API)</a></p>
+
+
+
+
+
+<div id="window-resizer-tooltip"><a href="http://www.webhek.com/demos/javascript-vibrate-api.html#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
