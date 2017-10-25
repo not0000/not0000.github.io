@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <krpano version="1.19">
 
+    
+  <!-- Spot Style - Load panorama -->
+  <style name="IconLoadpanorama"
+         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint5.png"
+         visible="false"
+         frame="0"
+         lastframe="11"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconLoadpanorama"
+         onout="onoutIconLoadpanorama"
+
+
+         />
+
+  <action name="onhoverIconLoadpanorama">
+    showtooltip('hotspot');
+  </action>
+
+
+  <action name="onoutIconLoadpanorama">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
   <!-- unsupported kind of display : PointMap -->
 
 
