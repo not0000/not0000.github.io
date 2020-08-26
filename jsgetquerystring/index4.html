@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+原生js ajax http get demo
+<button onclick="loadDoc()"></button>
+<div id="demo"></div>
+
+<script type="text/javascript">
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://mvcplanet.azurewebsites.net/api/test?a=1&b=2", true);
+  xhttp.send();
+}
+  
+</script>
+</body>
+</html>
